@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/single_icon"
+        android:title="@string/single" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/switch_icon"
+        android:title="@string/switch_name" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/double_icon"
+        android:title="@string/double_name" />
+
+</menu>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="arturs.suhomiro.flylinecalculator.ui.single_rod.SingleHandFragment"
+        android:label="@string/single_hand_rod"
+        tools:layout="@layout/fragment_single" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="arturs.suhomiro.flylinecalculator.ui.switch_road.SwitchRodFragment"
+        android:label="@string/switch_rod"
+        tools:layout="@layout/fragment_switch" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="arturs.suhomiro.flylinecalculator.ui.double_rod.DoubleHandFragment"
+        android:label="@string/double_hand_rod"
+        tools:layout="@layout/fragment_double" />
+</navigation>
