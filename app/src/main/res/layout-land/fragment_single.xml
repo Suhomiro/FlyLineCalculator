@@ -2,75 +2,54 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/doubleConstraintLayout"
+    android:id="@+id/singleConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.single_rod.SingleHandFragment">
 
     <TextView
-        android:id="@+id/doubleWeightMainView"
+        android:id="@+id/singleWeightMainView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/weight"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:text="#"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/doubleRecycleView"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/doubleRecycleView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:id="@+id/singleRecycleView"
+        android:layout_width="90dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        >
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutInfo"
+        app:layout_constraintTop_toBottomOf="@+id/singleWeightMainView"
+        app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutWeightDouble"
+        android:id="@+id/constraintLayoutRod"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadDouble"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layoutAnimation="@anim/layout_left_to_right">
-
-        <TextView
-            android:id="@+id/textViewWeightDouble"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Weight"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutRodDouble"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="267dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/layout_table_designe"
+        android:layoutAnimation="@anim/layout_left_to_right"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutWeightDouble"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutWeight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
-            android:id="@+id/textViewDouble"
+            android:id="@+id/textViewSingle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -82,7 +61,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/rodWeightTextViewDouble"
+            android:id="@+id/rodWeightTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -97,22 +76,46 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutInfoDouble"
-        android:layout_width="180dp"
+        android:id="@+id/constraintLayoutWeight"
+        android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutDataWeightDouble"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayoutRodDouble"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoad"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/grainTextViewDouble"
+            android:id="@+id/textViewWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutInfo"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/layout_table_designe"
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutDataWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutRod"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/grainTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -123,7 +126,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/gramTextViewDouble"
+            android:id="@+id/gramTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -136,18 +139,18 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutLoadDouble"
+        android:id="@+id/constraintLayoutLoad"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/doubleWeightMainView"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/loadingTextViewDouble"
+            android:id="@+id/loadingTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/loading"
@@ -159,26 +162,26 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutLoadWeightDouble"
+        android:id="@+id/constraintLayoutLoadWeight"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/doubleWeightMainView"
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayoutLoadDouble"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutLoad">
 
         <TextView
-            android:id="@+id/setLoadingGrainsTextViewDouble"
+            android:id="@+id/setLoadingGrainsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewUpDownDouble"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewUpDown"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -186,7 +189,7 @@
             tools:text="8" />
 
         <TextView
-            android:id="@+id/setLoadingTextViewGramDouble"
+            android:id="@+id/setLoadingTextViewGram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -196,13 +199,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageViewUpDownDouble"
+            app:layout_constraintStart_toEndOf="@+id/imageViewUpDown"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.538"
             tools:text="25" />
 
         <ImageView
-            android:id="@+id/imageViewUpDownDouble"
+            android:id="@+id/imageViewUpDown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_swap_vert_24"
@@ -214,26 +217,26 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutDataWeightDouble"
+        android:id="@+id/constraintLayoutDataWeight"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadWeightDouble"
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadWeight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayoutWeightDouble"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutWeight">
 
         <TextView
-            android:id="@+id/setGrainTextViewDouble"
+            android:id="@+id/setGrainTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewisChekedDouble"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewisCheked"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -241,7 +244,7 @@
             tools:text="120" />
 
         <TextView
-            android:id="@+id/setGramTextViewDouble"
+            android:id="@+id/setGramTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -251,13 +254,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageViewisChekedDouble"
+            app:layout_constraintStart_toEndOf="@+id/imageViewisCheked"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.461"
             tools:text="50" />
 
         <ImageView
-            android:id="@+id/imageViewisChekedDouble"
+            android:id="@+id/imageViewisCheked"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_task_alt_24"
@@ -270,14 +273,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutRodDouble"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/singleRecycleView"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutInfo"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/logoImageViewDouble"
+            android:id="@+id/logoImageView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:padding="20dp"
