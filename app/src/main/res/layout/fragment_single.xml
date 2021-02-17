@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/singleConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.single_rod.SingleHandFragment">
@@ -19,25 +20,31 @@
         android:id="@+id/singleRecycleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="1.0"
+
+        >
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+        android:id="@+id/constraintLayoutWeight"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoad"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layoutAnimation="@anim/layout_left_to_right">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Weight"
@@ -49,20 +56,21 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/constraintLayoutRod"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutWeight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="1.0"
+        android:layoutAnimation="@anim/layout_left_to_right">
 
         <TextView
-            android:id="@+id/textViewDouble"
+            android:id="@+id/textViewSingle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -89,18 +97,19 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/constraintLayoutInfo"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutDataWeight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutRod"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="1.0"
+        android:layoutAnimation="@anim/layout_left_to_right">
 
         <TextView
             android:id="@+id/grainTextView"
@@ -127,12 +136,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout4"
+        android:id="@+id/constraintLayoutLoad"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/layout_table_designe"
+        android:layoutAnimation="@anim/layout_left_to_right"
         app:layout_constraintBottom_toTopOf="@+id/singleWeightMainView"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -149,16 +159,17 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout6"
+        android:id="@+id/constraintLayoutLoadWeight"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/layout_table_designe"
         app:layout_constraintBottom_toTopOf="@+id/singleWeightMainView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout4">
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutLoad"
+        android:layoutAnimation="@anim/layout_left_to_right">
 
         <TextView
             android:id="@+id/setLoadingGrainsTextView"
@@ -167,7 +178,7 @@
             android:layout_marginEnd="5dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewUpDown"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -185,13 +196,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageViewUpDown"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.538"
             tools:text="25" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageViewUpDown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_swap_vert_24"
@@ -203,16 +214,17 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout5"
+        android:id="@+id/constraintLayoutDataWeight"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadWeight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout3">
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutWeight"
+        android:layoutAnimation="@anim/layout_left_to_right">
 
         <TextView
             android:id="@+id/setGrainTextView"
@@ -221,7 +233,7 @@
             android:layout_marginEnd="5dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewisCheked"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -239,16 +251,37 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/imageViewisCheked"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.461"
             tools:text="50" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageViewisCheked"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_task_alt_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutRod"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layoutAnimation="@anim/layout_left_to_right">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="20dp"
+            android:src="@drawable/gonzo_logo_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

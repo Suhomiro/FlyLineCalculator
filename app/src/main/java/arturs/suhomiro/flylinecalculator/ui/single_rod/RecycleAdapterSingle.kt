@@ -1,15 +1,9 @@
 package arturs.suhomiro.flylinecalculator.ui.single_rod
 
-import android.content.res.Resources
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.GradientDrawable
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.ColorRes
-import androidx.annotation.RequiresApi
+import android.view.animation.AlphaAnimation
 import androidx.recyclerview.widget.RecyclerView
 import arturs.suhomiro.flylinecalculator.OnViewOnClickListener
 import arturs.suhomiro.flylinecalculator.R
@@ -17,9 +11,7 @@ import arturs.suhomiro.flylinecalculator.WeightData
 import kotlinx.android.synthetic.main.recycle_view_item.*
 import kotlinx.android.synthetic.main.recycle_view_item.view.*
 
-
 class RecycleAdapterSingle(var onViewOnClickListener: OnViewOnClickListener): RecyclerView.Adapter<RecycleAdapterSingle.MainViewHolder>() {
-
     private var weightData: List<WeightData> = listOf()
     private var currentSelection = -1
 
@@ -40,10 +32,17 @@ class RecycleAdapterSingle(var onViewOnClickListener: OnViewOnClickListener): Re
 
     override fun onBindViewHolder(holder: RecycleAdapterSingle.MainViewHolder, position: Int) {
         holder.bind(weightData[position])
+        setFadeAnimation(holder.itemView)
         if (currentSelection == position){
             holder.itemView.setBackgroundResource(R.drawable.item_view_press)
         } else holder.itemView.setBackgroundResource(R.drawable.item_view_designe)
+    }
 
+
+    private fun setFadeAnimation(view: View) {
+        val anim = AlphaAnimation(0.0f, 1.0f)
+        anim.duration = 100
+        view.startAnimation(anim)
     }
 
 
@@ -58,12 +57,10 @@ class RecycleAdapterSingle(var onViewOnClickListener: OnViewOnClickListener): Re
             itemView.setOnClickListener {
                  onViewOnClickListener?.onItemViewClick(weightData)
                 if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener;
-
                 notifyItemChanged(currentSelection);
                 currentSelection = adapterPosition;
                 notifyItemChanged(currentSelection);
-
-            }
+                }
             }
         }
 

@@ -11,23 +11,21 @@
         android:id="@+id/doubleWeightMainView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/weight"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:text="#"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/doubleRecycleView"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/doubleRecycleView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_width="90dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/doubleWeightMainView">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -35,12 +33,12 @@
         android:id="@+id/constraintLayoutWeightDouble"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
+        android:layoutAnimation="@anim/layout_left_to_right"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadDouble"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textViewWeightDouble"
@@ -58,16 +56,16 @@
         android:id="@+id/constraintLayoutRodDouble"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="267dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
+        android:layoutAnimation="@anim/layout_left_to_right"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayoutWeightDouble"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/textViewDouble"
@@ -100,16 +98,16 @@
         android:id="@+id/constraintLayoutInfoDouble"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
+        android:layoutAnimation="@anim/layout_left_to_right"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayoutDataWeightDouble"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/constraintLayoutRodDouble"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/grainTextViewDouble"
@@ -136,15 +134,69 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutDataWeightDouble"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/layout_table_designe"
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadWeightDouble"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutWeightDouble">
+
+        <TextView
+            android:id="@+id/setGrainTextViewDouble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewisChekedDouble"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.521"
+            tools:text="120" />
+
+        <TextView
+            android:id="@+id/setGramTextViewDouble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageViewisChekedDouble"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.461"
+            tools:text="50" />
+
+        <ImageView
+            android:id="@+id/imageViewisChekedDouble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_task_alt_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutLoadDouble"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/doubleWeightMainView"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/loadingTextViewDouble"
@@ -162,14 +214,14 @@
         android:id="@+id/constraintLayoutLoadWeightDouble"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/doubleWeightMainView"
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayoutLoadDouble"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutLoadDouble">
 
         <TextView
             android:id="@+id/setLoadingGrainsTextViewDouble"
@@ -214,67 +266,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutDataWeightDouble"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadWeightDouble"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayoutWeightDouble"
-        android:layoutAnimation="@anim/layout_left_to_right">
-
-        <TextView
-            android:id="@+id/setGrainTextViewDouble"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewisChekedDouble"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.521"
-            tools:text="120" />
-
-        <TextView
-            android:id="@+id/setGramTextViewDouble"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageViewisChekedDouble"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.461"
-            tools:text="50" />
-
-        <ImageView
-            android:id="@+id/imageViewisChekedDouble"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_task_alt_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutRodDouble"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/doubleRecycleView"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutInfoDouble"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/logoImageViewDouble"

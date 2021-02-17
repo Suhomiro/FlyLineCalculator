@@ -2,48 +2,46 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/doubleConstraintLayout"
+    android:id="@+id/switchConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.single_rod.SingleHandFragment">
 
     <TextView
-        android:id="@+id/doubleWeightMainView"
+        android:id="@+id/singleWeightMainView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/weight"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:text="#"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/doubleRecycleView"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/doubleRecycleView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:id="@+id/switchRecycleView"
+        android:layout_width="90dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/singleWeightMainView">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutWeightDouble"
+        android:id="@+id/constraintLayoutWeightSwitch"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadDouble"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadSwitch"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textViewWeightDouble"
+            android:id="@+id/textViewWeightSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Weight"
@@ -55,22 +53,21 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutRodDouble"
+        android:id="@+id/constraintLayoutRodSwitch"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="267dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
+        android:layoutAnimation="@anim/layout_left_to_right"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutWeightDouble"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutWeightSwitch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
-            android:id="@+id/textViewDouble"
+            android:id="@+id/textViewSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -82,7 +79,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/rodWeightTextViewDouble"
+            android:id="@+id/rodWeightTextViewSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -97,22 +94,22 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutInfoDouble"
+        android:id="@+id/constraintLayoutInfoSwitch"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutDataWeightDouble"
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutDataWeightSwitch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayoutRodDouble"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutRodSwitch"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
-            android:id="@+id/grainTextViewDouble"
+            android:id="@+id/grainTextViewSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -123,7 +120,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/gramTextViewDouble"
+            android:id="@+id/gramTextViewSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
@@ -136,18 +133,18 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutLoadDouble"
+        android:id="@+id/constraintLayoutLoadSwitch"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/doubleWeightMainView"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/loadingTextViewDouble"
+            android:id="@+id/loadingTextViewSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/loading"
@@ -159,26 +156,26 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutLoadWeightDouble"
+        android:id="@+id/constraintLayoutLoadWeightSwitch"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/doubleWeightMainView"
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayoutLoadDouble"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutLoadSwitch">
 
         <TextView
-            android:id="@+id/setLoadingGrainsTextViewDouble"
+            android:id="@+id/setLoadingGrainsTextViewSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewUpDownDouble"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewUpDownSwitch"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -186,7 +183,7 @@
             tools:text="8" />
 
         <TextView
-            android:id="@+id/setLoadingTextViewGramDouble"
+            android:id="@+id/setLoadingTextViewGramSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -196,13 +193,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageViewUpDownDouble"
+            app:layout_constraintStart_toEndOf="@+id/imageViewUpDownSwitch"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.538"
             tools:text="25" />
 
         <ImageView
-            android:id="@+id/imageViewUpDownDouble"
+            android:id="@+id/imageViewUpDownSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_swap_vert_24"
@@ -214,26 +211,26 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutDataWeightDouble"
+        android:id="@+id/constraintLayoutDataWeightSwitch"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/layout_table_designe"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadWeightDouble"
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutLoadWeightSwitch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayoutWeightDouble"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutWeightSwitch">
 
         <TextView
-            android:id="@+id/setGrainTextViewDouble"
+            android:id="@+id/setGrainTextViewSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewisChekedDouble"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewisChekedSwitch"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -241,7 +238,7 @@
             tools:text="120" />
 
         <TextView
-            android:id="@+id/setGramTextViewDouble"
+            android:id="@+id/setGramTextViewSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -251,13 +248,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageViewisChekedDouble"
+            app:layout_constraintStart_toEndOf="@+id/imageViewisChekedSwitch"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.461"
             tools:text="50" />
 
         <ImageView
-            android:id="@+id/imageViewisChekedDouble"
+            android:id="@+id/imageViewisChekedSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_task_alt_24"
@@ -270,16 +267,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutRodDouble"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layoutAnimation="@anim/layout_left_to_right">
+        android:layoutAnimation="@anim/layout_left_to_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/switchRecycleView"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayoutDataWeightSwitch"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/logoImageViewDouble"
+            android:id="@+id/logoImageViewSwitch"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layoutAnimation="@anim/layout_right_to_left"
             android:padding="20dp"
             android:src="@drawable/gonzo_logo_black"
             app:layout_constraintBottom_toBottomOf="parent"

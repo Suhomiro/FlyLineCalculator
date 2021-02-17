@@ -1,17 +1,20 @@
 package arturs.suhomiro.flylinecalculator.ui.double_rod
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import arturs.suhomiro.flylinecalculator.*
-import arturs.suhomiro.flylinecalculator.ui.single_rod.RecycleAdapterSingle
-import arturs.suhomiro.flylinecalculator.ui.single_rod.SingleHandViewModel
+import arturs.suhomiro.flylinecalculator.OnViewOnClickListener
+import arturs.suhomiro.flylinecalculator.R
+import arturs.suhomiro.flylinecalculator.WeightData
+import arturs.suhomiro.flylinecalculator.getDoubleHandData
 import kotlinx.android.synthetic.main.fragment_double.*
 import kotlinx.android.synthetic.main.fragment_single.*
 
@@ -46,11 +49,24 @@ class DoubleHandFragment : Fragment() {
             super.onActivityCreated(savedInstanceState)
             doubleHandViewModel = ViewModelProvider(this).get(DoubleHandViewModel::class.java)
             doubleHandViewModel.getDataFromLocalSource()
-            doubleHandViewModel.getData().observe(viewLifecycleOwner, Observer { renderData(it) })
-            singleRecycleViewDouble.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-            singleRecycleViewDouble.adapter = adapter
-        }
+            doubleHandViewModel.getDataWeight().observe(viewLifecycleOwner, Observer { renderData(it) })
+            if(resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+                doubleRecycleView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+            } else doubleRecycleView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+            doubleRecycleView.adapter = adapter
+            doubleHandViewModel.getImageChange(isDarkThemeOn())
+            doubleHandViewModel.getImage().observe(viewLifecycleOwner, Observer { renderNightImage(it) })
 
+            val recycleCreated: Animation = AnimationUtils.loadAnimation(context, R.anim.right_to_left)
+            doubleRecycleView.startAnimation(recycleCreated)
+        }
+    private fun isDarkThemeOn(): Boolean {
+        return resources.configuration.uiMode and
+                Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+    }
+    private fun renderNightImage(imageRes: Int){
+        logoImageViewDouble.setImageResource(imageRes)
+    }
         private fun renderData(it: List<WeightData>?) {
             adapter.setWeight(getDoubleHandData())
         }

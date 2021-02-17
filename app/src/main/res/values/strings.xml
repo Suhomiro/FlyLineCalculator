@@ -12,7 +12,7 @@
     <string name="grains_small">grains</string>
     <string name="single_hand_rod">Single Hand Rod</string>
     <string name="single">Single</string>
-    <string name="weight">Weight</string>
+    <string name="weight">Rod weight</string>
     <string name="switch_rod">Switch Rod</string>
     <string name="switch_up">Switch</string>
     <string name='rod2'>Rod#:</string>
@@ -20,4 +20,5 @@
     <string name="double_name">Double</string>
     <string name="switch_name">Switch</string>
     <string name="double_hand_rod">Double Hand Rod</string>
+
 </resources>
